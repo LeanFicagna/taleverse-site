@@ -1,0 +1,356 @@
+<title>Privacidade do Taleverse</title>
+<style>
+  /* layout: coluna única centralizada, leitura longa, cabeçalho simples com data e sumário */
+  :root {
+    --bg: #FAF9FC;
+    --surface: #FFFFFF;
+    --fg: #1A1620;
+    --muted: #6B6575;
+    --accent: #8350D9;
+    --accent-soft: #F1EAFB;
+    --border: #E4DFEE;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121212;
+      --surface: #1E1E1E;
+      --fg: #FFFFFF;
+      --muted: #9E9E9E;
+      --accent: #A379E8;
+      --accent-soft: #241A33;
+      --border: #303030;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #121212;
+    --surface: #1E1E1E;
+    --fg: #FFFFFF;
+    --muted: #9E9E9E;
+    --accent: #A379E8;
+    --accent-soft: #241A33;
+    --border: #303030;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    margin: 0;
+    padding: 48px 16px 64px;
+    font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  .page {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .masthead {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .mark {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .brand {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: -0.01em;
+  }
+  h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(28px, 5vw, 38px);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 20px 0 8px;
+    text-wrap: balance;
+  }
+  .updated {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0 0 32px;
+  }
+  .lede {
+    font-size: 18px;
+    color: var(--fg);
+    margin: 0 0 36px;
+    max-width: 62ch;
+  }
+  nav.toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-bottom: 44px;
+  }
+  nav.toc p {
+    margin: 0 0 10px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  nav.toc ol {
+    margin: 0;
+    padding-left: 20px;
+    columns: 2;
+    column-gap: 24px;
+  }
+  nav.toc li { margin-bottom: 6px; break-inside: avoid; }
+  nav.toc a {
+    color: var(--fg);
+    text-decoration: none;
+    font-size: 14.5px;
+  }
+  nav.toc a:hover { color: var(--accent); }
+
+  section {
+    margin-bottom: 40px;
+    scroll-margin-top: 20px;
+    max-width: 65ch;
+  }
+  h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: 22px;
+    margin: 0 0 14px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  h2 .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 8px; }
+  strong { font-weight: 600; }
+
+  .callout {
+    background: var(--accent-soft);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-size: 14.5px;
+    color: var(--fg);
+  }
+  .callout strong { color: var(--accent); }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14.5px;
+    margin: 4px 0 14px;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th { color: var(--muted); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.03em; }
+
+  .contact {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+  }
+  .email-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  .email-chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 8px 12px;
+    border-radius: 8px;
+    user-select: all;
+  }
+  button.copy {
+    font: inherit;
+    font-size: 13px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--fg);
+    padding: 7px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  button.copy:hover { border-color: var(--accent); color: var(--accent); }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  @media (max-width: 480px) {
+    nav.toc ol { columns: 1; }
+    body { padding: 32px 16px 48px; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+<div class="page">
+  <div class="masthead">
+    <div class="mark">T</div>
+    <div class="brand">Taleverse</div>
+  </div>
+  <h1>Política de Privacidade</h1>
+  <p class="updated">Última atualização: 1 de outubro de 2026</p>
+  <p class="lede">Este documento explica quais dados o Taleverse coleta, por quê, com quem compartilha, e como você exerce seus direitos sobre eles — em linguagem direta, sem juridiquês.</p>
+
+  <nav class="toc" aria-label="Sumário">
+    <p>Nesta página</p>
+    <ol>
+      <li><a href="#quem-somos">Quem somos</a></li>
+      <li><a href="#dados">Dados que coletamos</a></li>
+      <li><a href="#finalidade">Por que coletamos</a></li>
+      <li><a href="#compartilhamento">Com quem compartilhamos</a></li>
+      <li><a href="#retencao">Por quanto tempo guardamos</a></li>
+      <li><a href="#seguranca">Segurança</a></li>
+      <li><a href="#direitos">Seus direitos</a></li>
+      <li><a href="#menores">Menores de idade</a></li>
+      <li><a href="#mudancas">Mudanças nesta política</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ol>
+  </nav>
+
+  <section id="quem-somos">
+    <h2><span class="num">01</span> Quem somos</h2>
+    <p>O Taleverse é um aplicativo de ficção interativa: você lê histórias com escolhas que mudam o rumo da narrativa, e também pode escrever e publicar as suas próprias. Esta política vale pra qualquer pessoa que use o app, em qualquer plataforma.</p>
+    <p>O responsável pelo tratamento dos seus dados (controlador, nos termos da LGPD) é o desenvolvedor do Taleverse, que pode ser contatado pelo email no final desta página.</p>
+  </section>
+
+  <section id="dados">
+    <h2><span class="num">02</span> Dados que coletamos</h2>
+    <table>
+      <tr><th>Categoria</th><th>O que inclui</th></tr>
+      <tr><td>Cadastro</td><td>Nome, email. Sua senha é gerenciada pelo Firebase Authentication — nunca passa pelos nossos servidores em texto puro.</td></tr>
+      <tr><td>Perfil</td><td>Biografia (opcional) e foto de perfil, quando você define uma.</td></tr>
+      <tr><td>Uso do app</td><td>Livros na sua lista de desejos, lidos, iniciados; livros que você publica como autor; progresso de leitura (cena atual, escolhas feitas) — guardado no seu próprio aparelho.</td></tr>
+      <tr><td>Social</td><td>Quem você segue e quem te segue.</td></tr>
+      <tr><td>Notificações</td><td>Um identificador técnico do seu aparelho (token), usado só pra te enviar notificações push, se você permitir.</td></tr>
+    </table>
+    <p>Não coletamos dados de pagamento — o Taleverse ainda não tem nenhum sistema de compra dentro do app.</p>
+  </section>
+
+  <section id="finalidade">
+    <h2><span class="num">03</span> Por que coletamos</h2>
+    <ul>
+      <li>Criar e manter sua conta, e permitir que você entre nela.</li>
+      <li>Mostrar seu perfil, sua biblioteca e seu progresso de leitura.</li>
+      <li>Permitir que você leia e publique histórias interativas.</li>
+      <li>Mostrar quem você segue e quem te segue.</li>
+      <li>Enviar notificações, caso você as tenha ativado.</li>
+    </ul>
+    <p>A base legal é a <strong>execução do contrato</strong> firmado quando você cria uma conta (pra fornecer o serviço que você pediu) e, pros dados opcionais (foto, biografia, notificações), o seu <strong>consentimento</strong> — que pode ser retirado a qualquer momento nas configurações do app.</p>
+  </section>
+
+  <section id="compartilhamento">
+    <h2><span class="num">04</span> Com quem compartilhamos</h2>
+    <p>Usamos o <strong>Firebase</strong> (Google Cloud) como infraestrutura — autenticação, banco de dados e envio de notificações. O Firebase processa seus dados em nosso nome, como operador, seguindo as instruções desta política. Os dados do banco ficam armazenados na região <strong>southamerica-east1</strong> (Brasil).</p>
+    <p>Não vendemos seus dados, nem compartilhamos com terceiros pra fins de publicidade.</p>
+  </section>
+
+  <section id="retencao">
+    <h2><span class="num">05</span> Por quanto tempo guardamos</h2>
+    <p>Enquanto sua conta existir. Se você solicitar a exclusão dos seus dados (veja a seção de direitos abaixo), nós os apagamos em até 30 dias.</p>
+  </section>
+
+  <section id="seguranca">
+    <h2><span class="num">06</span> Segurança</h2>
+    <p>O acesso aos seus dados é restrito por regras de segurança do banco de dados: só você, dono da conta, pode alterar seus próprios dados. Toda comunicação entre o app e nossos servidores é criptografada (HTTPS).</p>
+  </section>
+
+  <section id="direitos">
+    <h2><span class="num">07</span> Seus direitos</h2>
+    <p>Pela Lei Geral de Proteção de Dados (LGPD), você pode a qualquer momento:</p>
+    <ul>
+      <li><strong>Confirmar</strong> se tratamos algum dado seu, e <strong>acessá-lo</strong>.</li>
+      <li><strong>Corrigir</strong> dados incompletos ou desatualizados — nome e biografia já são editáveis direto no app, em Editar Perfil.</li>
+      <li><strong>Solicitar a eliminação</strong> dos seus dados. Hoje isso é feito manualmente: mande um email (veja o contato abaixo) e processamos em até 30 dias.</li>
+      <li><strong>Pedir uma cópia</strong> dos seus dados (portabilidade), também por email.</li>
+      <li><strong>Revogar o consentimento</strong> pra dados opcionais, como desativar notificações nas configurações do app.</li>
+    </ul>
+    <div class="callout">Pra exercer qualquer um desses direitos, é só mandar um email — o endereço está na seção de contato, no fim desta página.</div>
+  </section>
+
+  <section id="menores">
+    <h2><span class="num">08</span> Menores de idade</h2>
+    <p>O Taleverse não é direcionado a menores de 18 anos, e não coletamos intencionalmente dados de crianças. Se você acredita que uma criança nos forneceu dados pessoais, entre em contato pra que possamos removê-los.</p>
+  </section>
+
+  <section id="mudancas">
+    <h2><span class="num">09</span> Mudanças nesta política</h2>
+    <p>Podemos atualizar este documento conforme o app evolui. Mudanças relevantes serão comunicadas dentro do próprio app. A data no topo desta página sempre reflete a versão mais recente.</p>
+  </section>
+
+  <section id="contato" class="contact">
+    <h2 style="margin-top:0"><span class="num">10</span> Contato</h2>
+    <p>Dúvidas sobre esta política, ou pra exercer qualquer um dos seus direitos:</p>
+    <div class="email-row">
+      <span class="email-chip" id="email">leandersonficagna321@gmail.com</span>
+      <button class="copy" id="copyBtn" type="button">Copiar email</button>
+    </div>
+  </section>
+
+  <footer>
+    Taleverse — aplicativo de ficção interativa.
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var btn = document.getElementById('copyBtn');
+    var email = document.getElementById('email').textContent;
+    btn.addEventListener('click', function () {
+      function fallback() {
+        var r = document.createRange();
+        r.selectNode(document.getElementById('email'));
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(r);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(function () {
+          btn.textContent = 'Copiado!';
+          setTimeout(function () { btn.textContent = 'Copiar email'; }, 1800);
+        }).catch(fallback);
+      } else {
+        fallback();
+      }
+    });
+  })();
+</script>
