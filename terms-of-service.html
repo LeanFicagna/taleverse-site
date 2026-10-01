@@ -1,0 +1,288 @@
+<title>Termos de Serviço do Taleverse</title>
+<style>
+  :root {
+    --bg: #FAF9FC;
+    --surface: #FFFFFF;
+    --fg: #1A1620;
+    --muted: #6B6575;
+    --accent: #8350D9;
+    --accent-soft: #F1EAFB;
+    --border: #E4DFEE;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121212;
+      --surface: #1E1E1E;
+      --fg: #FFFFFF;
+      --muted: #9E9E9E;
+      --accent: #A379E8;
+      --accent-soft: #241A33;
+      --border: #303030;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #121212;
+    --surface: #1E1E1E;
+    --fg: #FFFFFF;
+    --muted: #9E9E9E;
+    --accent: #A379E8;
+    --accent-soft: #241A33;
+    --border: #303030;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    margin: 0;
+    padding: 48px 16px 64px;
+    font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  .page { max-width: 680px; margin: 0 auto; }
+  .masthead { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .mark {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: 18px;
+    flex-shrink: 0;
+  }
+  .brand { font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: 20px; letter-spacing: -0.01em; }
+  h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(28px, 5vw, 38px);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 20px 0 8px;
+    text-wrap: balance;
+  }
+  .updated { color: var(--muted); font-size: 14px; margin: 0 0 32px; }
+  .lede { font-size: 18px; color: var(--fg); margin: 0 0 36px; max-width: 62ch; }
+  nav.toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-bottom: 44px;
+  }
+  nav.toc p {
+    margin: 0 0 10px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  nav.toc ol { margin: 0; padding-left: 20px; columns: 2; column-gap: 24px; }
+  nav.toc li { margin-bottom: 6px; break-inside: avoid; }
+  nav.toc a { color: var(--fg); text-decoration: none; font-size: 14.5px; }
+  nav.toc a:hover { color: var(--accent); }
+
+  section { margin-bottom: 40px; scroll-margin-top: 20px; max-width: 65ch; }
+  h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: 22px;
+    margin: 0 0 14px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  h2 .num { font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--accent); font-weight: 500; }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 8px; }
+  strong { font-weight: 600; }
+
+  .callout {
+    background: var(--accent-soft);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-size: 14.5px;
+    color: var(--fg);
+  }
+  .callout strong { color: var(--accent); }
+
+  .contact { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 24px; }
+  .email-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .email-chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 8px 12px;
+    border-radius: 8px;
+    user-select: all;
+  }
+  button.copy {
+    font: inherit;
+    font-size: 13px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--fg);
+    padding: 7px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  button.copy:hover { border-color: var(--accent); color: var(--accent); }
+
+  footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+
+  @media (max-width: 480px) {
+    nav.toc ol { columns: 1; }
+    body { padding: 32px 16px 48px; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+<div class="page">
+  <div class="masthead">
+    <div class="mark">T</div>
+    <div class="brand">Taleverse</div>
+  </div>
+  <h1>Termos de Serviço</h1>
+  <p class="updated">Última atualização: 1 de outubro de 2026</p>
+  <p class="lede">Estes termos explicam as regras de uso do Taleverse: o que você pode fazer no app, o que não pode, e o que acontece com as histórias que você publica. Ao criar uma conta, você concorda com eles.</p>
+
+  <nav class="toc" aria-label="Sumário">
+    <p>Nesta página</p>
+    <ol>
+      <li><a href="#aceitacao">Aceitação dos termos</a></li>
+      <li><a href="#quem-pode-usar">Quem pode usar</a></li>
+      <li><a href="#conta">Sua conta</a></li>
+      <li><a href="#conteudo">Conteúdo que você publica</a></li>
+      <li><a href="#conduta">Conduta proibida</a></li>
+      <li><a href="#moderacao">Moderação e remoção de conteúdo</a></li>
+      <li><a href="#propriedade">Propriedade intelectual do Taleverse</a></li>
+      <li><a href="#garantias">Isenção de garantias</a></li>
+      <li><a href="#responsabilidade">Limitação de responsabilidade</a></li>
+      <li><a href="#encerramento">Encerramento</a></li>
+      <li><a href="#mudancas">Alterações nestes termos</a></li>
+      <li><a href="#lei">Lei aplicável</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ol>
+  </nav>
+
+  <section id="aceitacao">
+    <h2><span class="num">01</span> Aceitação dos termos</h2>
+    <p>Ao criar uma conta ou usar o Taleverse de qualquer forma, você concorda com estes Termos de Serviço e com a <a href="privacy-policy.html">Política de Privacidade</a>. Se você não concorda, não use o app.</p>
+  </section>
+
+  <section id="quem-pode-usar">
+    <h2><span class="num">02</span> Quem pode usar</h2>
+    <p>O Taleverse não é direcionado a menores de 18 anos. Ao criar uma conta, você declara ter pelo menos 18 anos ou a maioridade civil da sua jurisdição.</p>
+  </section>
+
+  <section id="conta">
+    <h2><span class="num">03</span> Sua conta</h2>
+    <ul>
+      <li>Você é responsável por manter sua senha em sigilo e por tudo que acontecer na sua conta.</li>
+      <li>As informações que você fornece no cadastro e no perfil (nome, biografia, foto) devem ser verdadeiras e não devem se passar por outra pessoa ou entidade.</li>
+      <li>Uma conta é pessoal e intransferível.</li>
+    </ul>
+  </section>
+
+  <section id="conteudo">
+    <h2><span class="num">04</span> Conteúdo que você publica</h2>
+    <p>O Taleverse permite que qualquer usuário escreva e publique suas próprias histórias interativas. Sobre esse conteúdo:</p>
+    <ul>
+      <li><strong>A autoria é sua.</strong> Publicar uma história no Taleverse não transfere os direitos autorais dela pra nós.</li>
+      <li><strong>Você nos dá uma licença</strong>, não exclusiva e limitada ao funcionamento do app, pra armazenar, exibir e distribuir sua história dentro do Taleverse enquanto ela estiver publicada.</li>
+      <li><strong>Você é responsável pelo que publica.</strong> O Taleverse não revisa histórias antes da publicação, e você garante ter o direito de publicar o conteúdo que enviar (texto, imagens de capa, etc.).</li>
+      <li>Se você excluir uma história ou sua conta, paramos de exibi-la publicamente; ver a <a href="privacy-policy.html#retencao">Política de Privacidade</a> pros prazos de retenção dos dados.</li>
+    </ul>
+  </section>
+
+  <section id="conduta">
+    <h2><span class="num">05</span> Conduta proibida</h2>
+    <p>Ao usar o Taleverse, você concorda em não publicar ou enviar conteúdo que:</p>
+    <ul>
+      <li>Seja ilegal, difamatório, ou viole direitos de terceiros (incluindo direitos autorais e de imagem);</li>
+      <li>Envolva discurso de ódio, assédio, ou incite violência contra pessoas ou grupos;</li>
+      <li>Explore, sexualize ou coloque em risco menores de idade, de qualquer forma;</li>
+      <li>Contenha malware, spam, ou tentativas de fraude;</li>
+      <li>Se passe por outra pessoa, empresa ou pelo próprio Taleverse.</li>
+    </ul>
+    <div class="callout">Esta lista é um resumo das regras principais, não uma lista exaustiva. Use o bom senso: se um conteúdo prejudica ou expõe outra pessoa, ele provavelmente viola estes termos.</div>
+  </section>
+
+  <section id="moderacao">
+    <h2><span class="num">06</span> Moderação e remoção de conteúdo</h2>
+    <p>Podemos remover conteúdo, suspender ou encerrar contas que violem estes termos, com ou sem aviso prévio, dependendo da gravidade. Estamos trabalhando em um mecanismo de denúncia direto no app; até ele existir, denúncias podem ser feitas pelo email no fim desta página.</p>
+  </section>
+
+  <section id="propriedade">
+    <h2><span class="num">07</span> Propriedade intelectual do Taleverse</h2>
+    <p>O nome "Taleverse", o aplicativo em si (código, design, marca) e qualquer conteúdo que não seja enviado por usuários pertencem ao Taleverse. Você não pode copiar, modificar ou redistribuir o app fora do uso normal pretendido.</p>
+  </section>
+
+  <section id="garantias">
+    <h2><span class="num">08</span> Isenção de garantias</h2>
+    <p>O Taleverse é fornecido "como está". Não garantimos que o app estará sempre disponível, livre de erros, ou que o conteúdo publicado por outros usuários é preciso, apropriado ou seguro.</p>
+  </section>
+
+  <section id="responsabilidade">
+    <h2><span class="num">09</span> Limitação de responsabilidade</h2>
+    <p>Na máxima medida permitida por lei, o Taleverse não se responsabiliza por danos indiretos decorrentes do uso do app, incluindo perda de dados ou de conteúdo publicado por você ou por terceiros.</p>
+  </section>
+
+  <section id="encerramento">
+    <h2><span class="num">10</span> Encerramento</h2>
+    <p>Você pode parar de usar o Taleverse a qualquer momento. Solicitações de exclusão de conta e dos seus dados seguem o processo descrito na <a href="privacy-policy.html#direitos">Política de Privacidade</a>.</p>
+  </section>
+
+  <section id="mudancas">
+    <h2><span class="num">11</span> Alterações nestes termos</h2>
+    <p>Podemos atualizar estes termos conforme o app evolui. Mudanças relevantes serão comunicadas dentro do próprio app. A data no topo desta página sempre reflete a versão mais recente.</p>
+  </section>
+
+  <section id="lei">
+    <h2><span class="num">12</span> Lei aplicável</h2>
+    <p>Estes termos são regidos pelas leis da República Federativa do Brasil.</p>
+  </section>
+
+  <section id="contato" class="contact">
+    <h2 style="margin-top:0"><span class="num">13</span> Contato</h2>
+    <p>Dúvidas sobre estes termos, ou pra denunciar conteúdo:</p>
+    <div class="email-row">
+      <span class="email-chip" id="email">leandersonficagna321@gmail.com</span>
+      <button class="copy" id="copyBtn" type="button">Copiar email</button>
+    </div>
+  </section>
+
+  <footer>
+    Taleverse — aplicativo de ficção interativa.
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var btn = document.getElementById('copyBtn');
+    var email = document.getElementById('email').textContent;
+    btn.addEventListener('click', function () {
+      function fallback() {
+        var r = document.createRange();
+        r.selectNode(document.getElementById('email'));
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(r);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(function () {
+          btn.textContent = 'Copiado!';
+          setTimeout(function () { btn.textContent = 'Copiar email'; }, 1800);
+        }).catch(fallback);
+      } else {
+        fallback();
+      }
+    });
+  })();
+</script>
